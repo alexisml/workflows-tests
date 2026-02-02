@@ -1,0 +1,19 @@
+name: Test Reusable Dummy
+
+on:
+  workflow_call:
+    inputs:
+      test_input:
+        description: Test input parameter
+        required: false
+        type: string
+        default: default value
+
+jobs:
+  dummy_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo test input
+        run: 'echo "Received input: ${{ inputs.test_input }}"'
+      - name: Dummy step
+        run: echo "This is a dummy reusable workflow"
