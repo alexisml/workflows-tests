@@ -1,0 +1,19 @@
+name: Test Triggered by No Reuse Plus
+
+on:
+  workflow_run:
+    workflows:
+      - "Test No Reuse Workflow+Plus"
+    types:
+      - completed
+
+jobs:
+  verify_trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify workflow was triggered
+        run: |
+          echo "✅ SUCCESS: This workflow was triggered by 'Test No Reuse Workflow+Plus'"
+          echo "Workflow name: ${{ github.event.workflow_run.name }}"
+          echo "Workflow conclusion: ${{ github.event.workflow_run.conclusion }}"
+          echo "Head branch: ${{ github.event.workflow_run.head_branch }}"
