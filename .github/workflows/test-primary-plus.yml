@@ -1,0 +1,24 @@
+name: Test Primary Workflow+Plus
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  call_reusable:
+    uses: ./.github/workflows/test-reusable-dummy.yml
+    with:
+      test_input: "from primary workflow"
+  
+  # This job ensures workflow_run triggers fire correctly
+  complete:
+    runs-on: ubuntu-latest
+    needs: call_reusable
+    if: always()
+    steps:
+      - name: Test workflow complete
+        run: echo "Test Primary Workflow completed"
