@@ -1,0 +1,16 @@
+name: Test No Reuse Workflow+Plus
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  dummy_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dummy step
+        run: echo "This is a dummy workflow"
