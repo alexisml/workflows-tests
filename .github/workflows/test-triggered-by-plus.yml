@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Verify workflow was triggered
         run: |
-          echo "✅ SUCCESS: This workflow was triggered by 'Test Primary Workflow'"
+          echo "✅ SUCCESS: This workflow was triggered by 'Test Primary Workflow+Plus'"
           echo "Workflow name: ${{ github.event.workflow_run.name }}"
           echo "Workflow conclusion: ${{ github.event.workflow_run.conclusion }}"
           echo "Head branch: ${{ github.event.workflow_run.head_branch }}"
