@@ -1,0 +1,15 @@
+name: Test Primary Workflow without Complete
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  call_reusable:
+    uses: ./.github/workflows/test-reusable-dummy.yml
+    with:
+      test_input: "from primary workflow"
