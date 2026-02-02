@@ -6,8 +6,6 @@ on:
       - "Test Primary Workflow+Plus"
     types:
       - completed
-    branches:
-      - copilot/remove-complete-step-workflow
 
 jobs:
   verify_trigger:
